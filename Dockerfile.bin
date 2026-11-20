@@ -6,5 +6,4 @@ RUN curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o 
 WORKDIR /app
 COPY package.json server.js ./
 ENV NODE_ENV=production
-# atualiza o yt-dlp a cada início (o YouTube muda toda hora)
 CMD ["sh", "-c", "yt-dlp -U || true; node server.js"]
